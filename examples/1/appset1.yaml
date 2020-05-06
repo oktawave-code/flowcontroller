@@ -1,0 +1,27 @@
+apiVersion: horizon.oktawave/v1alpha1
+kind: test1
+metadata:
+  name: appset1
+spec:
+  namespace: appset1
+  clientId: someClinetIdString
+  app1:
+  - name: app1
+    image: some.registry/image1
+    cnt: 1
+    limits:
+      memory: "512Mi"
+      cpu: 1
+  app2:
+  - name: app2a
+    image: some.registry/image2
+    cnt: 1
+    limits:
+      memory: "256Mi"
+      cpu: 2
+  - name: app2b
+    image: some.registry/image2
+    cnt: 3
+    limits:
+      memory: "256Mi"
+      cpu: 1

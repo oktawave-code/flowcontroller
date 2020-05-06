@@ -1,0 +1,23 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    flowDef:
+      type: list
+      base: /spec/app2
+  name: app2-((name:name))
+spec:
+  replicas: ((cnt:int))
+  template:
+    metadata:
+      labels:
+        app: app2
+        name: ((name))
+    spec:
+      containers:
+      - name: app2-((name))
+        image: ((image:image))
+        resources:
+          limits:
+            memory: ((limits/memory))
+            cpu: ((limits/cpu))
